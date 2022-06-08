@@ -6,4 +6,6 @@ The maximum number that can be used is `999.999.999.999` and it will be translat
 nouă sute nouăzeci și nouă miliarde nouă sute nouăzeci și nouă milioane nouă sute nouăzeci și nouă mii nouă sute nouăzeci și nouă lei
 ```
 
+![alt text](https://github.com/KanaszM/Godot_RONtoLetters/blob/main/ReadMe_Resources/Picture1.png)
+
 The font used in this project is *Aller Regular* by Dalton Maag Ltd `https://www.fontsquirrel.com/fonts/aller`.
