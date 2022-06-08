@@ -1,2 +1,2 @@
 # Godot_RONtoLetters
-This project will dynamically convert numeric values into words (in Romanian) with an option to switch between RON or Euro mode
+This project will dynamically convert numeric values into a RO Romanian word representation with an option to switch between RON or Euro mode
