@@ -14,8 +14,8 @@ onready var nLabel_Letters := nContainer_VBox.get_node("nLabel_Letters") as Labe
 var nRegEx: RegEx = RegEx.new()
 var bValid: bool = false
 var sCurrencyMode: String = ""
-var sNumberName: PoolStringArray = ["", ""]
-var sCentsName: PoolStringArray = ["", ""]
+var sNumberName: PoolStringArray = PoolStringArray(["", ""])
+var sCentsName: PoolStringArray = PoolStringArray(["", ""])
 
 ### LOCAL INIT ###
 func _ready() -> void:
