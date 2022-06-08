@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://nModule_RONtoLetters.gd" type="Script" id=1]
+
+[node name="nModule_RONtoLetters" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 60 )
+script = ExtResource( 1 )
+
+[node name="nContainer_Margin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nContainer_Scroll" type="ScrollContainer" parent="nContainer_Margin"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 390.0
+margin_bottom = 190.0
+
+[node name="nContainer_VBox" type="VBoxContainer" parent="nContainer_Margin/nContainer_Scroll"]
+margin_right = 380.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="nContainer_HBox" type="HBoxContainer" parent="nContainer_Margin/nContainer_Scroll/nContainer_VBox"]
+margin_right = 380.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+
+[node name="nLineEdit_Numbers" type="LineEdit" parent="nContainer_Margin/nContainer_Scroll/nContainer_VBox/nContainer_HBox"]
+margin_right = 157.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+clear_button_enabled = true
+
+[node name="nLineEdit_Cents" type="LineEdit" parent="nContainer_Margin/nContainer_Scroll/nContainer_VBox/nContainer_HBox"]
+margin_left = 161.0
+margin_right = 318.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+clear_button_enabled = true
+
+[node name="nOptionButton_Currency" type="OptionButton" parent="nContainer_Margin/nContainer_Scroll/nContainer_VBox/nContainer_HBox"]
+margin_left = 322.0
+margin_right = 380.0
+margin_bottom = 28.0
+text = "RON"
+items = [ "RON", null, false, 0, false, "EUR", null, false, 1, false ]
+selected = 0
+
+[node name="nLabel_Letters" type="Label" parent="nContainer_Margin/nContainer_Scroll/nContainer_VBox"]
+margin_top = 32.0
+margin_right = 380.0
+margin_bottom = 50.0
+size_flags_vertical = 2
+autowrap = true
