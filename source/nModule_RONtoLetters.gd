@@ -9,13 +9,14 @@ onready var nLineEdit_Numbers := nContainer_HBox.get_node("nLineEdit_Numbers") a
 onready var nLineEdit_Cents := nContainer_HBox.get_node("nLineEdit_Cents") as LineEdit
 onready var nOptionButton_Currency := nContainer_HBox.get_node("nOptionButton_Currency") as OptionButton
 onready var nLabel_Letters := nContainer_VBox.get_node("nLabel_Letters") as Label
+onready var nButton_Copy := nContainer_VBox.get_node("nButton_Copy") as Button
 
 ### LOCAL DATA ###
 var nRegEx: RegEx = RegEx.new()
 var bValid: bool = false
 var sCurrencyMode: String = ""
-var sNumberName: PoolStringArray = PoolStringArray(["", ""])
-var sCentsName: PoolStringArray = PoolStringArray(["", ""])
+var sNumberName: PoolStringArray = ["", ""]
+var sCentsName: PoolStringArray = ["", ""]
 
 ### LOCAL INIT ###
 func _ready() -> void:
@@ -23,6 +24,7 @@ func _ready() -> void:
 	nLineEdit_Numbers.connect("text_changed", self, "nLineEdit_Numbers__text_changed")
 	nLineEdit_Cents.connect("text_changed", self, "nLineEdit_Numbers__text_changed")
 	nOptionButton_Currency.connect("item_selected", self, "nOptionButton_Currency__item_selected")
+	nButton_Copy.connect("pressed", self, "nButton_Copy__pressed")
 	# Default values
 	nLineEdit_Cents.max_length = 3
 	nLineEdit_Numbers.max_length = 15
@@ -56,6 +58,7 @@ func nLineEdit_Numbers__text_changed(_origin: String) -> void:
 		var _prefix: String = " " + sCentsName[0] + " " if nLineEdit_Cents.text == "1" else " " + sCentsName[1]
 		if nRegEx.search(nLineEdit_Cents.text.replace(_suffix, "").replace(_prefix, "")):
 			nLabel_Letters.text += _suffix + Convert_Number(nLineEdit_Cents.text) + _prefix
+	print(nLabel_Letters.text)
 
 func Convert_Number(_source: String) -> String:
 	var _result: String = ""
@@ -182,3 +185,6 @@ func nOptionButton_Currency__item_selected(_id: int) -> void:
 			sNumberName = ["euro", "euro"]
 			sCentsName = ["cent", "cenți"]
 	nLineEdit_Numbers__text_changed(nLineEdit_Numbers.text)
+
+func nButton_Copy__pressed() -> void:
+	OS.clipboard = nLabel_Letters.text

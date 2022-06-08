@@ -15,9 +15,6 @@ custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
 custom_constants/margin_bottom = 10
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="nContainer_Scroll" type="ScrollContainer" parent="nContainer_Margin"]
 margin_left = 10.0
@@ -63,3 +60,9 @@ margin_right = 380.0
 margin_bottom = 50.0
 size_flags_vertical = 2
 autowrap = true
+
+[node name="nButton_Copy" type="Button" parent="nContainer_Margin/nContainer_Scroll/nContainer_VBox"]
+margin_top = 156.0
+margin_right = 380.0
+margin_bottom = 180.0
+text = "Copiază Rezultat"
